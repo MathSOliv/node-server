@@ -1,12 +1,6 @@
-const http = require ('http')
+const http = require('http');
+const app = require('./app');
 
-const server = http.createServer((req, res) => {
-    if(req.url == '/'){
-        res.end('<h1>home</h1>')
-    }
-    else(res.end('<h1>URL desconhecida</h1>'))    
-})
-
-server.listen(1234, 'localhost', () =>{
-    console.log('Server listening on port 1234')
-})
+const port = process.env.PORT || 1234
+const server = http.createServer(app);
+server.listen(port, () => { console.log(`Server on port ${port}`); })
