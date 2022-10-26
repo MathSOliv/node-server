@@ -48,8 +48,7 @@ body{
     transition: .5s;
 }
 .active{
-    background-color: var(--color-light-blue1);
-    border-radius: 10px;
+    border-bottom: 2px solid var(--color-light-blue1);
     padding: 8px;
 }
 #logo_center{
