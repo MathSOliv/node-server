@@ -32,7 +32,47 @@ const Desvios = db.define('controle_de_desvios', {
         type: Sequelize.STRING,
         allowNull: false
     },
+    lider: {
+        type: Sequelize.STRING,
+        allowNull: false
+    },
+    gerente_obra: {
+        type: Sequelize.STRING,
+        allowNull: false
+    },
+    area: {
+        type: Sequelize.STRING,
+        allowNull: false
+    },
+    equipamentos: {
+        type: Sequelize.STRING,
+        allowNull: false
+    },
+    nivel: {
+        type: Sequelize.STRING,
+        allowNull: false
+    },
+    classificacao: {
+        type: Sequelize.STRING,
+        allowNull: false
+    },
+    tipo_risco: {
+        type: Sequelize.STRING,
+        allowNull: false
+    },
     site: {
+        type: Sequelize.STRING,
+        allowNull: false
+    },
+    contrato: {
+        type: Sequelize.STRING,
+        allowNull: false
+    },
+    ocorrido: {
+        type: Sequelize.STRING,
+        allowNull: false
+    },
+    empresa: {
         type: Sequelize.STRING,
         allowNull: false
     }
