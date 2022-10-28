@@ -4,11 +4,15 @@ const app = express();
 const router = require('express').Router();
 const desviosRouter = require('./routes/desvios')
 
+
+
 app.set("view engine", "ejs")
+app.use(express.static('public'))
+
+app.use('/Desvios', desviosRouter);
 app.use("/", (req, res)=>{
     res.render("index.ejs", {})
 })
-app.use('/Desvios', desviosRouter);
-app.use(express.static('public'))
+
 
 module.exports = app;

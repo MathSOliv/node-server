@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="/css/home.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <h3> Linhas: <%= desvio.length  %> </h3>
+    <table>
+        <thead>
+            <th>ID:</th>
+            <th>Site:</th>
+            <th>Envolvidos:</th>
+        </thead>
+        <tbody>
+        </tr>
+
+        <% for (var i = 0; i < desvio.length;  i++) { %>
+         <tr>
+           <td><%= desvio[i].id %></td>
+           <td><%= desvio[i].site %></td>
+           <td><%= desvio[i].envolvidos %></td>
+         </tr>    
+        <% } %>
+        </tbody>
+    </table>
+</body>
+</html>
