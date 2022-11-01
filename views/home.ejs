@@ -5,9 +5,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link href="/css/home.css" rel="stylesheet" type="text/css">
+    <link href="/css/home.css" rel="stylesheet" type="text/css"> 
 </head>
 <body>
+    <% let len = desvio.length;
+    let text = "[";
+        for (let i = 0; i < len; i++) {
+          text += desvio[i].id + ", ";
+        }
+        text += "]";
+    %>
     <h3> Linhas: <%= desvio.length  %> </h3>
     <table>
         <thead>
@@ -17,15 +24,21 @@
         </thead>
         <tbody>
         </tr>
-
         <% for (var i = 0; i < desvio.length;  i++) { %>
          <tr>
            <td><%= desvio[i].id %></td>
            <td><%= desvio[i].site %></td>
            <td><%= desvio[i].envolvidos %></td>
-         </tr>    
+         </tr>
         <% } %>
         </tbody>
     </table>
+    <p id="demo">,</p>
+    <script>
+        var qtdDesvios = '<%= desvio.length %>'
+        console.log(' <%= text %>');
+        document.getElementById("demo").innerHTML = ' <%= text %>';
+        const desvios = '<%= desvio %>'
+    </script>
 </body>
 </html>
