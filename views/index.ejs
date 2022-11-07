@@ -1,7 +1,41 @@
 <%- include("navBar.ejs"); %>
-<div class="content" id="content">
-    
-</div>
 
+<select name="obra" id="obra" onchange="alterObra()">
+    <option value="" disabled selected>Selecionar obra...</option>
+    <option value="001 - Matriz - São Paulo">001 - Matriz - São Paulo</option>
+    <option value="002 - Filial SP - Itapecerica da Serra">002 - Filial SP - Itapecerica da Serra</option>
+</select>
+<div class="content">
+    <div class="cabecalho">
+        <table id="tableHead">
+            <thead>
+                <th style="width: 5% ; background-color: blue;" >ID:</th>
+                <th style="width: 10% ; background-color: yellow;" >Obra:</th>
+                <th style="width: 10% ; background-color: red;" >Preenchido:</th>
+            </thead>
+        </table>
+    </div>
+    <div class="corpo">
+        <table id="tableBody">
+            <tbody>
+                <% for (var i = 0; i < desvio.length;  i++) { %>
+                    <tr>
+                      <td style="width: 3rem ; text-align: center;" ><%= desvio[i].id %></td>
+                      <td style="width: 10rem ; text-align: center;" ><%= desvio[i].site %></td>
+                      <td style="width: 20rem ; text-align: center;" ><%= desvio[i].preenchido %></td>
+                    </tr>
+                   <% } %>
+            </tbody>
+        </table>
+    </div>
+        
+</div>
+<script>
+    // function alterObra(){
+    //    let selectedObra = document.getElementById("obra").value
+    //    document.getElementById("nomeObra").innerText = selectedObra
+    //    console.log(selectedObra)
+    //}
+</script>
 </body>
 </html>

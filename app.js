@@ -3,6 +3,7 @@ const path = require('path')
 const app = express();
 const router = require('express').Router();
 const desviosRouter = require('./routes/desvios')
+const Desvios = require('./models/desvios')
 
 
 
@@ -11,7 +12,16 @@ app.use(express.static('public'))
 
 app.use('/Desvios', desviosRouter);
 app.use("/", (req, res)=>{
-    res.render("index.ejs", {})
+    Desvios.findAll({
+        where: {
+            site: "030 - Mosaic - Uberaba",
+            nivel: "Leve"
+        }
+    }).then((desvio) =>{
+        return res.render("index.ejs", {desvio: desvio})
+    }).catch((error) =>{
+        return console.log(error.message)
+    });
 })
 
 
