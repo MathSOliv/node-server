@@ -7,10 +7,6 @@ exports.desviosPorID = async (req, res, next) =>{
 
 exports.desviosPorObra = async (req, res, next) =>{
     const desvio = await Desvios.findAll({
-        where: {
-            site: "030 - Mosaic - Uberaba",
-            nivel: "Leve"
-        }
     }).then((desvio) =>{
         return res.render("home.ejs", {desvio: desvio})
     }).catch((error) =>{

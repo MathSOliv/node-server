@@ -13,10 +13,6 @@ app.use(express.static('public'))
 app.use('/Desvios', desviosRouter);
 app.use("/", (req, res)=>{
     Desvios.findAll({
-        where: {
-            site: "030 - Mosaic - Uberaba",
-            nivel: "Leve"
-        }
     }).then((desvio) =>{
         return res.render("index.ejs", {desvio: desvio})
     }).catch((error) =>{

@@ -103,6 +103,10 @@ th{
     border-collapse: collapse;
     height: 35px;
 }
+#teste{
+    position: absolute;
+    top: 5rem;
+}
 
 
 @media screen and (max-width: 768px){ /* quando a tela for menor que 768px (menor que a tela de notebook) */

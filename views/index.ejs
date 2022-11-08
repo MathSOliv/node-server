@@ -5,6 +5,7 @@
     <option value="001 - Matriz - São Paulo">001 - Matriz - São Paulo</option>
     <option value="002 - Filial SP - Itapecerica da Serra">002 - Filial SP - Itapecerica da Serra</option>
 </select>
+<input type="text" id="teste" oninput="teste()" >
 <div class="content">
     <div class="cabecalho">
         <table id="tableHead">
@@ -18,11 +19,29 @@
     <div class="corpo">
         <table id="tableBody">
             <tbody>
+                <% const a = desvio.map(({ id, site, preenchido, equipe, nivel, area }) => ([{
+                    codigo:id, 
+                    site: site,
+                    preenchido: preenchido,
+                    equipe:equipe,
+                    nivel:nivel,
+                    area:area
+            }])) %>
+                <%= console.log(a) %>
+                <%= console.log("teste") %>
+                <% let teste = "varjs" %>
+                <%= console.log(teste) %>
+
+                
+
                 <% for (var i = 0; i < desvio.length;  i++) { %>
                     <tr>
                       <td style="width: 3rem ; text-align: center;" ><%= desvio[i].id %></td>
-                      <td style="width: 10rem ; text-align: center;" ><%= desvio[i].site %></td>
+                      <td style="width: 13rem ; text-align: center;" ><%= desvio[i].site %></td>
                       <td style="width: 20rem ; text-align: center;" ><%= desvio[i].preenchido %></td>
+                      <td style="width: 20rem ; text-align: center;" ><%= desvio[i].equipe %></td>
+                      <td style="width: 5rem ; text-align: center;" ><%= desvio[i].nivel %></td>
+                      <td style="width: 20rem ; text-align: center;" ><%= desvio[i].area %></td>
                     </tr>
                    <% } %>
             </tbody>
@@ -31,11 +50,15 @@
         
 </div>
 <script>
-    // function alterObra(){
-    //    let selectedObra = document.getElementById("obra").value
-    //    document.getElementById("nomeObra").innerText = selectedObra
-    //    console.log(selectedObra)
-    //}
+    const tamanho = Number("<%= desvio.length %>")
+    console.log("<%= a %>");
+
+    function teste() {
+        const varjs = document.getElementById("teste").value
+        console.log(varjs)
+    }
+     
+
 </script>
 </body>
 </html>
